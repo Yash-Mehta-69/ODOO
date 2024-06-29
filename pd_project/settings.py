@@ -38,12 +38,14 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    'accounts'
+    'accounts',
+    'paper_distribution'
 ]
 
 AUTH_USER_MODEL = "accounts.CustomUser"
 LOGIN_REDIRECT_URL = "index"
 LOGOUT_REDIRECT_URL = "index"
+LOGIN_URL = 'accounts:login'
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -122,6 +124,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
