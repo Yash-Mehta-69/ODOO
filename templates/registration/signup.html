@@ -5,9 +5,56 @@
 
 {% block content %}
 <h2>Sign Up</h2>
-<form method="post">
+<!-- <form method="post">
   {% csrf_token %}
   {{ form.as_div }}
   <button type="submit">Sign Up</button>
-</form>
+</form> -->
+
+<header>
+  <a href="" class="logo">logo</a>
+  <ul>
+    <li class="btn"><a href="./login.html">Login</a></li>
+  </ul>
+</header>
+<section class="myform-area">
+  <div class="container">
+      <div class="row justify-content-center">
+          <div class="col-lg-8">
+              <div class="form-area login-form">
+                  <div class="form-input">
+                      <h2>Signup Form</h2>
+                      <form method="post">
+                        {% csrf_token %}
+                          <div class="form-group">
+                              <input type="text"  id="name" name="username" required>
+                              <label>Create Username</label>
+                          </div>
+                          <div class="form-group">
+                              <input type="password" id="pass" name="password1" required>
+                              <label>Password</label>
+                          </div>
+                          <div class="form-group">
+                              <input type="password" id="" name="password2" required>
+                              <label>Confirm-password</label>
+                          </div>
+                          <div class="form-group">
+                              <!-- <input type="user-role" id="" name="user-role" required> -->
+                              <label for="usertype">Select a role</label>
+                              <select class="dropdown" name="usertype" id="user-role">
+                                    <option value="Administrator">Administrator</option>
+                                    <option value="Examiner">Examiner</option>
+                                    <option value="Invigilator">Invigilator</option>
+                              </select>
+                          </div>
+                          <div class="myform-button">
+                              <button class="myform-btn">Signup</button>
+                          </div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
 {% endblock %}
